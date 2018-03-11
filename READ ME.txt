@@ -1,0 +1,27 @@
++El scheduler ya hace los N threads que le piden y segun el modo el mae cede el procesador o se lo quitan.
+
++Los modos son 1 preemptive y 0 non-preemptive
+
++Pueden ejecutarlo de la siguiente manera para que lo vean corriendo:
+-> compilar: gcc lottery.c -o lottery
+-> ejecucion preemptive: ./lottery 5 3 5 6 3 2 1 1
+	donde 5: num de threads, (3,5,6,3,2): tickets para cada thread, 1: modo, 1: 1s de quantum
+
+-> ejecucion non-preemptive: ./lottery 3 10 8 7 0
+	donde 3: num de threads, (10,8,7): tickets para cada thread, 0: modo
+
++ Faltan afinar algunos detalles pero ya lo que esta creo que da para que uds puedan integrar tuanis lo de uds
+
++ Falta agregar el argunmento "Cantidad de trabajo para cada thread" que realmente no se lo que sea
+
++Me falta meterle validaciones, EJ si pongo solo 2 threads pero pongo tickets para 5 threads
+
++ Investigue en internet sigsetjmp y siglongjmp, pero realmente no lo pude implementar bien, sin embargo el scheduler funciona como deberia, creo quepodriamos intentar integrar esos 2 funciones de nuevo aunque hasta el momento no he podido, en el codigo las van a ver.
+
++ Si ven el codigo hay un monton de prints comentados, si los descomentan van a entender mejor la ejecucion del programa
+
++Creo que con esto podemos avanzar bastante :)
+
+
+
+
